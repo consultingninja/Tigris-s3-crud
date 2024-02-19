@@ -3,8 +3,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build
-COPY ./build ./build
+RUN npm run build # run the "build" package script
 EXPOSE 3000
 WORKDIR /app/build
 CMD ["node","index.js"]
